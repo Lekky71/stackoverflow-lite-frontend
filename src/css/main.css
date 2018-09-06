@@ -1,0 +1,158 @@
+body {
+  font-size: 10px;
+  background-color: #3CB371;
+  font-family: "Lithos Pro", serif;
+  margin: 0;
+  text-align: center;
+}
+
+.col-1 {
+  width: 8.33%;
+}
+
+.col-2 {
+  width: 16.67%;
+}
+
+.col-3 {
+  width: 25%;
+}
+
+.col-4 {
+  width: 33.33%;
+}
+
+.col-5 {
+  width: 41.65%;
+}
+
+.col-6 {
+  width: 50%;
+}
+
+.col-7 {
+  width: 58.33%;
+}
+
+.col-8 {
+  width: 66.64%;
+}
+
+.col-9 {
+  width: 75%;
+}
+
+.col-10 {
+  width: 83.33%;
+}
+
+.col-11 {
+  width: 91.63%;
+}
+
+.col-12 {
+  width: 100%;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.header {
+  height: 5%;
+  width: 100%;
+  background-color: #333;
+
+}
+
+@media screen and (max-width: 600px) {
+  .col-4 {
+    width: 83.33%;
+  }
+}
+
+.topnav {
+  overflow: hidden;
+  display: flex;
+  font-size: 15px;
+  text-align: center;
+  justify-content: center;
+  margin: auto;
+}
+
+.topnav a {
+  width: 130px;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.topnav a:hover {
+  background-color: white;
+  color: black;
+}
+
+.auth-box {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  top: 50%;
+  left: 50%;
+  margin-top: -150px;
+  margin-left: -150px;
+  background: white;
+  box-shadow: #333333;
+}
+
+.auth-form {
+  width: 300px;
+  height: 300px;
+  border-radius: 10px;
+  margin: 0;
+  padding: 0;
+}
+
+.auth-input {
+  margin: 5px;
+  padding: 0 10px;
+  width: 250px;
+  height: 34px;
+  color: #404040;
+  background: white;
+  border: 1px solid #404040;
+  border-radius: 2px;
+  outline: 0 solid #404040;
+  -moz-outline-radius: 3px;
+  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.12);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.12);
+}
+
+input[type=submit] {
+  padding: 0 18px;
+  width: 230px;
+  height: 29px;
+  margin-left: 10px;
+  margin-right: 10px;
+  font-size: 14px;
+  font-weight: normal;
+  color: black;
+  text-align: center;
+  background: #3CB371;
+  border-radius: 3px;
+  outline: 0;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  background-image: -webkit-linear-gradient(top, #3CB371, #3CB371);
+  background-image: -moz-linear-gradient(top, #3CB371, #3CB371);
+  background-image: -o-linear-gradient(top, #3CB371, #3CB371);
+  background-image: linear-gradient(to bottom, #3CB371, #3CB371);
+  font-family: "Lithos Pro", serif;
+}
