@@ -13,7 +13,8 @@
   <!-- Place favicon.ico in the root directory -->
 
   <link rel="stylesheet" href="css/main.css">
-  <script type="text/javascript" src="./js/auth.js"></script>
+  <script type="text/javascript" src="js/cookie.js"></script>
+  <script type="text/javascript" src="js/auth.js"></script>
 </head>
 
 <body>
@@ -33,11 +34,12 @@
 <div class="auth-box">
   <p style=" font-size: 20px">Login</p>
   <form class="auth-form" id="login-form" action="#" method="post">
-    <p>
-      <input class="auth-input" id="username" name="username" type="text" placeholder="Username" minlength="4" required/>
-      <input class="auth-input" id="password" name="password" style="margin-top: 10%" type="password" placeholder="Password" minlength="4" required/>
-      <input class="" style="margin-top: 10%"  type="submit" value="SUBMIT">
-    </p>
+    <input class="auth-input" id="username" name="username" type="text" placeholder="Username" minlength="4" required/>
+    <input class="auth-input" id="password" name="password" style="margin-top: 10%" type="password"
+           placeholder="Password" minlength="4" required/>
+    <input class="" style="margin-top: 10%" type="submit" value="SUBMIT" id="login-button">
+
+    <h3 style="color: red; font-size: 10px; font-family: 'Times New Roman',serif" id="error-text"></h3>
   </form>
 </div>
 </body>

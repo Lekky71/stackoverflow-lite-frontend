@@ -1,7 +1,8 @@
 window.addEventListener('load', (ev) => {
   console.log('Page has been loaded');
   const loginForm = document.getElementById('login-form');
-  const rootUrl = 'http:/127.0.0.1:3000/api/v1';
+  const signUpForm = document.getElementById('signup-form');
+  const rootUrl = 'http://127.0.0.1:3000/api/v1';
 
   let postData = (url, data, callback) => {
     return fetch(rootUrl + url, {
@@ -24,17 +25,64 @@ window.addEventListener('load', (ev) => {
       })
   };
 
-  loginForm.addEventListener('submit', (event) => {
-    console.log('Seeing submit click');
-    event.preventDefault();
-    const username = document.getElementById('username').value;
-    const password = document.getElementById('password').value;
-    postData('/auth/login', {username, password}, (err, res) => {
-      if(!err) {
-        console.log(res);
-      }
-    })
+  if(loginForm) {
+    loginForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const loginButton = document.getElementById('login-button');
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+      const errText = document.getElementById('error-text');
+      errText.textContent = '';
 
-  });
+      loginButton.style.visibility = 'hidden';
+      postData('/auth/login', {username, password}, (err, res) => {
+        if (!err) {
+          console.log(res);
+          if (res.status === 'failure') {
+            errText.textContent = res.errors[0];
+            loginButton.style.visibility = 'visible';
+          }
+          else {
+            saveCookie('user', JSON.stringify(res.user));
+            saveCookie('token', res.token);
+            window.location = '/';
+          }
+        }
+      })
+
+    });
+  }
+
+  if (signUpForm) {
+    signUpForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+
+      const signUpButton = document.getElementById('signup-button');
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+      const email = document.getElementById('email').value;
+      const first_name = document.getElementById('first_name').value;
+      const last_name = document.getElementById('last_name').value;
+
+      const errText = document.getElementById('error-text');
+      errText.textContent = '';
+      signUpButton.style.visibility = 'hidden';
+
+      postData('/auth/signup', {username, password, email, first_name, last_name}, (err, res) => {
+        if (!err) {
+          console.log(res);
+          if (res.status === 'failure') {
+            errText.textContent = res.errors[0];
+            signUpButton.style.visibility = 'visible';
+          }
+          else {
+            saveCookie('user', JSON.stringify(res.user));
+            saveCookie('token', res.token);
+            window.location = '/';
+          }
+        }
+      })
+    })
+  }
 });
 
