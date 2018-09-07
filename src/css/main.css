@@ -1,59 +1,46 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400i');
 body {
   font-size: 10px;
   background-color: #3CB371;
-  font-family: "Lithos Pro", serif;
+  font-family: 'Roboto', sans-serif;
   margin: 0;
   text-align: center;
 }
 
-.col-1 {
-  width: 8.33%;
-}
-
-.col-2 {
-  width: 16.67%;
-}
-
-.col-3 {
-  width: 25%;
-}
-
-.col-4 {
-  width: 33.33%;
-}
-
-.col-5 {
-  width: 41.65%;
-}
-
-.col-6 {
-  width: 50%;
-}
-
-.col-7 {
-  width: 58.33%;
-}
-
-.col-8 {
-  width: 66.64%;
-}
-
-.col-9 {
-  width: 75%;
-}
-
-.col-10 {
-  width: 83.33%;
-}
-
-.col-11 {
-  width: 91.63%;
-}
-
-.col-12 {
+/* For mobile phones: */
+[class*="col-"] {
   width: 100%;
 }
-
+@media only screen and (min-width: 600px) {
+  /* For tablets: */
+  .col-1 {width: 8.33%;}
+  .col-2 {width: 16.66%;}
+  .col-3 {width: 25%;}
+  .col-4 {width: 33.33%;}
+  .col-5 {width: 41.66%;}
+  .col-6 {width: 50%;}
+  .col-7 {width: 58.33%;}
+  .col-8 {width: 66.66%;}
+  .col-9 {width: 75%;}
+  .col-10 {width: 83.33%;}
+  .col-11 {width: 91.66%;}
+  .col-12 {width: 100%;}
+}
+@media only screen and (min-width: 768px) {
+  /* For desktop: */
+  .col-1 {width: 8.33%;}
+  .col-2 {width: 16.66%;}
+  .col-3 {width: 25%;}
+  .col-4 {width: 33.33%;}
+  .col-5 {width: 41.66%;}
+  .col-6 {width: 50%;}
+  .col-7 {width: 58.33%;}
+  .col-8 {width: 66.66%;}
+  .col-9 {width: 75%;}
+  .col-10 {width: 83.33%;}
+  .col-11 {width: 91.66%;}
+  .col-12 {width: 100%;}
+}
 .container {
   width: 100%;
   display: flex;
@@ -70,11 +57,6 @@ body {
 
 }
 
-@media screen and (max-width: 600px) {
-  .col-4 {
-    width: 83.33%;
-  }
-}
 
 .topnav {
   overflow: hidden;
@@ -86,11 +68,24 @@ body {
 }
 
 .topnav a {
-  width: 130px;
+  width: 100px;
   display: block;
   color: white;
   text-align: center;
   padding: 14px 16px;
+  text-decoration: none;
+}
+
+.title a {
+  display: block;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+
+}
+
+a {
+  color: black;
   text-decoration: none;
 }
 
@@ -157,3 +152,55 @@ input[type=submit] {
   background-image: linear-gradient(to bottom, #3CB371, #3CB371);
   font-family: "Lithos Pro", serif;
 }
+
+.question-row {
+  background-color: white;
+  border-radius: 4px;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-bottom: 2%;
+  padding: 1%;
+  width: 65%;
+  display: flex;
+}
+
+
+@media only screen and (max-width: 600px) {
+  .question-row {
+    width: 100%;
+    display: block;
+    text-align: left;
+    padding: 5%;
+  }
+  .counts {
+    display: none;
+  }
+}
+
+.question-brief-info {
+
+}
+
+.brief-info {
+  margin-right: 5%;
+}
+
+.summary {
+
+}
+
+.info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  vertical-align: middle;
+}
+
+@media only screen and (max-width: 600px) {
+  .info {
+    display: block;
+    text-align: start;
+  }
+}
+

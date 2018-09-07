@@ -4,27 +4,6 @@ window.addEventListener('load', (ev) => {
   const signUpForm = document.getElementById('signup-form');
   const rootUrl = 'http://127.0.0.1:3000/api/v1';
 
-  let postData = (url, data, callback) => {
-    return fetch(rootUrl + url, {
-      method: 'POST', // *GET, POST, PUT, DELETE, etc.
-      headers: {
-        'Content-Type': 'application/json; charset=utf-8',
-        'Accept': 'application/json',
-      },
-      body: JSON.stringify(data), // body data type must match "Content-Type" header
-    })
-      .then(response => {
-        response.json()
-          .then( res => {
-            console.log(JSON.stringify(res));
-            if(callback) callback(null, res)
-          })
-          .catch(error => {
-            if (callback) callback(error, null)
-          });
-      })
-  };
-
   if(loginForm) {
     loginForm.addEventListener('submit', (event) => {
       event.preventDefault();
