@@ -224,12 +224,43 @@ input[type=submit] {
 }
 
 #question-container {
-  margin-left: 5%;
-  margin-right: 5%;
+  margin-left: 4%;
+  margin-right: 4%;
   padding-left: 2%;
-
+  padding-right: 2%;
   text-align: left;
 
+}
+
+.tags {
+  background-color: #3CB371;
+  border-radius: 5px;
+  width: fit-content;
+  color: white;
+  height: 20px;
+  text-align: center;
+  font-size: 13px;
+  padding-left: 3px;
+  padding-right: 3px;
+  padding-top: 3px;
+  opacity: 0.8;
+}
+
+.answer {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 10px;
+  padding: 10px;
+}
+
+.vote-button {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.vote-section {
+  width: 40px;
 }
 
 @media only screen and (max-width: 600px) {
