@@ -37,7 +37,7 @@
   </div>
 </header>
 
-<div style="margin-top: 5%; background-color: white; padding-top: 1%" id="question-container">
+<div style="margin-top: 5%; margin-bottom: 5%; background-color: white; padding-top: 1%; padding-bottom: 2%" id="question-container">
   <h1>Frontend javascript frameworks with node.js</h1>
   <div style="height: 1px; background-color: slategrey;"></div>
   <div class="main-part">
@@ -51,8 +51,8 @@
       <div class="tags">
         Mobile Web
       </div>
-      <div class="col-11" style="display: flex; justify-content: flex-end; padding-right: 20px">
-        <div class="tags" style="font-size: 13px; background-color: #3CB371; text-align: left; height: fit-content; padding: 8px">
+      <div class="col-12" style="display: flex; justify-content: flex-end; padding-right: 20px">
+        <div class="tags" style="font-size: 13px; background-color: #3CB371; text-align: left; height: fit-content; padding: 8px; margin-right: 23px">
           <div class=""><span>Asked on dec 12, 2017</span></div>
           <div>By Leke</div>
         </div>
@@ -78,9 +78,9 @@
             Basically i made a wrapper class that wraps around your Views onClickListener. you can also set a custom delay if you want.
 
           </p>
-          <div class="col-11" style="display: flex; justify-content: flex-end; padding-right: 20px">
+          <div class="col-12" style="display: flex; justify-content: flex-end;">
             <div class="tags" style="font-size: 13px; background-color: #3CB371; text-align: left; height: fit-content; padding: 8px">
-              <div class=""><span>Asked on dec 12, 2017</span></div>
+              <div class=""><span>Answered on dec 12, 2017</span></div>
               <div>By Leke</div>
             </div>
           </div>
@@ -97,6 +97,16 @@
             <p>One note about db/sp that isn't totally obvious: The scaling that occurs for these depends not on the devices real density (dpi) but on which "bucket" of densities it falls into: available buckets are: 120,160,240,320. This can cause some problems handling screens that are significantly different but get bucketed the same. – Fraggle Oct 29 '11 at 4:10</p>
           </div>
         </div>
+      </div>
+
+      <div class="col-12">
+        <h2>Add an answer</h2>
+        <form id="add-answer-form">
+        <textarea id="answer-textarea" title="answer" class="col-12" style="height: 120px; font-size: 14px; margin-bottom: 1%" minlength="15" required>
+
+        </textarea>
+          <input id="answer-button" type="submit" value="Post your answer" style="color: white; text-align: center"/>
+        </form>
       </div>
     </div>
   </div>
