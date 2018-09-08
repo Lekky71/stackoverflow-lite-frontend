@@ -1,5 +1,6 @@
 const moveToQuestionPage = (questionId) => {
   saveCookie('question_id', questionId);
+  window.location.href = './question.html';
 
 };
 
@@ -9,14 +10,15 @@ window.addEventListener('load', (ev) => {
     window.location.href = './login.html';
   }
 
-  getData('/questions', (err, res) => {
-    if (res.status === 'success') {
-      saveCookie('token', res.token);
-      const questions = res.questions;
-      const homeContainer = document.getElementById('questions-container');
+  if(window.location.href.search('index') !== -1) {
+    getData('/questions', (err, res) => {
+      if (res.status === 'success') {
+        saveCookie('token', res.token);
+        const questions = res.questions;
+        const homeContainer = document.getElementById('questions-container');
 
-      questions.forEach(question => {
-        homeContainer.innerHTML += `<div class="question-row">
+        questions.forEach(question => {
+          homeContainer.innerHTML += `<div class="question-row">
     <div class="col-2 info">
       <div class="brief-info" style="">
         <div class="counts"><span title="0 answers">${question.answer_count}</span></div>
@@ -31,7 +33,16 @@ window.addEventListener('load', (ev) => {
       <div></div>
     </div>
   </div>`;
-      });
-    }
+        });
+      }
+    });
+
+  }
+  const searchForm = document.getElementById('search-form');
+  searchForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const searchText = document.getElementById('search-input').value;
+    saveCookie('search_input', searchText);
+    window.location.href = './search.html';
   });
 });
