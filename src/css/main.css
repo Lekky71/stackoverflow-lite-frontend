@@ -276,3 +276,29 @@ input[type=submit] {
     margin-right: 5%;
   }
 }
+
+.item3 {
+  text-align: center;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+
+.item4 {
+  text-align: left;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  font-size: 12px;
+}
+
+.answer-tag {
+  font-size: 13px;
+  background-color: #3CB371;
+  text-align: left;
+  height: fit-content;
+  padding: 8px;
+}
+
+#link-a:hover {
+  cursor: pointer;
+  color: #5cb85c;
+}

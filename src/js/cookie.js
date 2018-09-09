@@ -47,6 +47,28 @@ const postData = (url, data, callback) => {
     })
 };
 
+const putData = (url, data, callback) => {
+  return fetch(rootUrl + url, {
+    method: 'PUT', // *GET, POST, PUT, DELETE, etc.
+    headers: {
+      'Content-Type': 'application/json; charset=utf-8',
+      'Accept': 'application/json',
+      'x-access-token': getCookie('token')
+    },
+    body: JSON.stringify(data), // body data type must match "Content-Type" header
+  })
+    .then(response => {
+      response.json()
+        .then( res => {
+          if(callback) callback(null, res)
+        })
+        .catch(error => {
+          if (callback) callback(error, null)
+        });
+    })
+};
+
+
 const getData = (url, callback) => {
   return fetch(rootUrl + url, {
     method: 'GET', // *GET, POST, PUT, DELETE, etc.
@@ -65,3 +87,4 @@ const getData = (url, callback) => {
         });
     })
 };
+
