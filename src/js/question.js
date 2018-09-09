@@ -7,6 +7,7 @@ const formatDate = (date) => {
 
 const voteAnswer = (questionId, answerId, type) => {
   putData(`/questions/${questionId}/answers/${answerId}/vote`, {vote: type}, (err, res) => {
+    if(err) return;
     if(res.status === 'success'){
       location.reload();
     }
@@ -29,6 +30,7 @@ const popUpComment = (questionId, answerId) => {
   document.getElementById('add-comment-form').addEventListener('submit', ev => {
     const content = commentTextArea.value;
     postData(`/questions/${questionId}/answers/${answerId}/comment`, {content}, (err, res) => {
+      if(err) return;
       if(res.status === 'success'){
         location.reload();
       }
@@ -48,6 +50,7 @@ window.addEventListener('load', (ev) => {
 
   const fetchQuestion = (questionId) => {
     getData(`/questions/${questionId}`, (err, res) => {
+      if(err) return;
       if (res.status === 'success') {
         const question = res.question;
         title.innerHTML = question.title;
@@ -78,9 +81,7 @@ window.addEventListener('load', (ev) => {
             <img id="downvote-button" class="vote-button" src="./images/down-arrow.svg" onclick="voteAnswer('${question.question_id}', '${answer.answer_id}', 'down')">
           </div>
           <div class="item2">
-            <p id="answer-text" style="font-size: 15px">
-              ${answer.content}
-            </p>
+            <p id="answer-text" class="col-12" style="font-size: 15px;">${answer.content}</p>
             <div class="col-12" style="display: flex; justify-content: flex-end;">
               <div class="tags answer-tag">
                 <div class=""><span>Answered on ${formatDate(new Date(answer.created_at))}</span></div>
@@ -101,6 +102,18 @@ window.addEventListener('load', (ev) => {
     });
   };
 
-  fetchQuestion(getCookie('question_id'))
+  const questionId = getCookie('question_id');
+  fetchQuestion(questionId);
+  document.getElementById('add-answer-form').addEventListener('submit', ev => {
+    const answerTextArea = document.getElementById('answer-textarea');
+    const content = answerTextArea.value.toString().trim();
+    postData(`/questions/${questionId}/answer`, {content: content}, (err, res) => {
+      if(res.status === 'success'){
+        location.reload();
+      }
+    });
+  });
+
+
 
 });
