@@ -2,8 +2,8 @@ const saveCookie = (name, value) => {
   const cook = `${name}=${value};path=/`
   document.cookie = cook;
 };
-// const rootUrl = 'https://stack-overflow-lite-backend.herokuapp.com/api/v1';
-const rootUrl = 'http://localhost:3000/api/v1';
+const rootUrl = 'https://stack-overflow-lite-backend.herokuapp.com/api/v1';
+// const rootUrl = 'http://localhost:3000/api/v1';
 
 
 const getCookie = (cname) => {
