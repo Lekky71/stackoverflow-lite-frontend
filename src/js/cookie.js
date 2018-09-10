@@ -34,6 +34,7 @@ const postData = (url, data, callback) => {
     headers: {
       'Content-Type': 'application/json; charset=utf-8',
       'Accept': 'application/json',
+      'Access-Control-Allow-Origin':'*',
       'x-access-token': getCookie('token')
 
     },
@@ -57,6 +58,7 @@ const putData = (url, data, callback) => {
     headers: {
       'Content-Type': 'application/json; charset=utf-8',
       'Accept': 'application/json',
+      'Access-Control-Allow-Origin':'*',
       'x-access-token': getCookie('token')
     },
     body: JSON.stringify(data), // body data type must match "Content-Type" header
@@ -79,6 +81,7 @@ const getData = (url, callback) => {
     mode: "cors", // no-cors, cors, *same-origin
     headers: {
       'Accept': 'application/json',
+      'Access-Control-Allow-Origin':'*',
       'x-access-token': getCookie('token')
     },
   })
