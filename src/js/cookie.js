@@ -35,6 +35,7 @@ const postData = (url, data, callback) => {
       'Content-Type': 'application/json; charset=utf-8',
       'Accept': 'application/json',
       'x-access-token': getCookie('token')
+
     },
     body: JSON.stringify(data), // body data type must match "Content-Type" header
   })
