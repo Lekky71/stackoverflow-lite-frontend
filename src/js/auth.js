@@ -15,6 +15,7 @@ window.addEventListener('load', (ev) => {
 
       loginButton.style.visibility = 'hidden';
       postData('/auth/login', {username, password}, (err, res) => {
+        console.log(JSON.stringify(err));
         if (!err) {
           console.log(res);
           if (res.status === 'failure') {
