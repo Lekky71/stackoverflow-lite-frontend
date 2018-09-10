@@ -14,6 +14,15 @@ const voteAnswer = (questionId, answerId, type) => {
   });
 };
 
+const markAsPreferred = (questionId, answerId) => {
+  putData(`/questions/${questionId}/answers/${answerId}/mark`, {}, (err, res) => {
+    if(err) return;
+    if(res.status === 'success'){
+      location.reload();
+    }
+  });
+};
+
 const popUpComment = (questionId, answerId) => {
   const addCommentModal = document.getElementById('add-comment-modal');
   addCommentModal.style.display = "block";
@@ -72,15 +81,22 @@ window.addEventListener('load', (ev) => {
             </div>`;
           });
 
+          const svgLink = question.preferred_answer_id === answer.answer_id ? 'orange_star.svg' : 'grey_star.svg';
+
           allAnswersContainer.innerHTML += `<div class="answer">
           <div class="vote-section item1" style="text-align: center">
             <img id="upvote-button" class="vote-button" src="./images/up-arrow.svg" onclick="voteAnswer('${question.question_id}', '${answer.answer_id}', 'up')">
             <br/>
             <h2 id="vote-count">${answer.up_votes - answer.down_votes}</h2>
             <br/>
-            <img id="downvote-button" class="vote-button" src="./images/down-arrow.svg" onclick="voteAnswer('${question.question_id}', '${answer.answer_id}', 'down')">
+            <img id="downvote-button" class="vote-button" src="./images/down-arrow.svg" 
+            onclick="voteAnswer('${question.question_id}', '${answer.answer_id}', 'down')">
+            <br/>
+            <br/>
+            <img id="upvote-button" class="vote-button" src="./images/${svgLink}" 
+            onclick="markAsPreferred('${question.question_id}', '${answer.answer_id}')">
           </div>
-          <div class="item2">
+          <div class="item2" style="">
             <p id="answer-text" class="col-12" style="font-size: 15px;">${answer.content}</p>
             <div class="col-12" style="display: flex; justify-content: flex-end;">
               <div class="tags answer-tag">

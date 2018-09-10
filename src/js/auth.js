@@ -24,7 +24,7 @@ window.addEventListener('load', (ev) => {
           else {
             saveCookie('user', JSON.stringify(res.user));
             saveCookie('token', res.token);
-            window.location = '/';
+            window.location.href = './index.html';
           }
         }
       })
@@ -57,7 +57,7 @@ window.addEventListener('load', (ev) => {
           else {
             saveCookie('user', JSON.stringify(res.user));
             saveCookie('token', res.token);
-            window.location = '/';
+            window.location.href = './index.html';
           }
         }
       })

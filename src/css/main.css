@@ -51,6 +51,7 @@ body {
 
 }
 
+
 .header {
   height: 5%;
   width: 100%;
@@ -105,6 +106,26 @@ a {
   margin-left: -150px;
   background: white;
   box-shadow: #333333;
+}
+
+.question-box {
+  position: absolute;
+  width: 600px;
+  height: 400px;
+  top: 50%;
+  left: 35%;
+  margin-top: -150px;
+  margin-left: -100px;
+  background: white;
+  box-shadow: #333333;
+}
+
+.question-form {
+  width: 500px;
+  min-height: 300px;
+  border-radius: 10px;
+  margin: 0;
+  padding: 0;
 }
 
 .auth-form {
@@ -189,7 +210,9 @@ input[type=submit] {
   width: 65%;
   display: flex;
 }
-
+.str-line-ans {
+  display: none;
+}
 
 @media only screen and (max-width: 600px) {
   .question-row {
@@ -198,8 +221,11 @@ input[type=submit] {
     text-align: left;
     padding: 5%;
   }
-  .counts {
+  .counts, .up-line-ans{
     display: none;
+  }
+  .str-line-ans {
+    display: block;
   }
 }
 
@@ -248,7 +274,7 @@ input[type=submit] {
 
 .answer {
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: 1fr 8fr;
   grid-gap: 10px;
   padding: 10px;
 }
@@ -263,18 +289,9 @@ input[type=submit] {
   width: 40px;
 }
 
-@media only screen and (max-width: 600px) {
-  .info {
-    display: block;
-    text-align: start;
-  }
-  #search-input {
-    width: 75%;
-  }
-  #search-form {
-    margin-left: 5%;
-    margin-right: 5%;
-  }
+
+.item1 {
+  width: 50px;
 }
 
 .item3 {
@@ -302,3 +319,33 @@ input[type=submit] {
   cursor: pointer;
   color: #5cb85c;
 }
+
+.comment-section {
+  width: 99%;
+}
+
+@media only screen and (max-width: 600px) {
+  .info {
+    display: block;
+    text-align: start;
+  }
+  #search-input {
+    width: 75%;
+  }
+  #search-form {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+  .comment-section {
+
+  }
+}
+
+.profile-container {
+  background-color: white;
+  margin: 5% 4%;
+  padding: 1% 2% 2%;
+  text-align: left;
+
+}
+

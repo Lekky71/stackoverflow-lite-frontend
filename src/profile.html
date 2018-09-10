@@ -16,6 +16,7 @@
   <link rel="stylesheet" href="css/modal.css">
   <script type="text/javascript" src="js/cookie.js"></script>
   <script type="text/javascript" src="js/index.js"></script>
+  <script type="text/javascript" src="js/profile.js"></script>
 </head>
 
 <body>
@@ -37,9 +38,48 @@
   </div>
 </header>
 
-<div class="container" style="margin-top: 5%" id="questions-container">
-
+<div id="question-container" class="profile-container">
+  <h1 id="question-title" style="margin-left: 5%">Profile</h1>
+  <div class="" style="display: flex; font-size: 13px">
+    <img src="./images/profile.svg" style="width: 120px; height: 120px; object-fit: cover; margin-right: 4%">
+    <div>
+      <h1 id="username">Hashcode</h1>
+      <p id="fullname">Fakorede Oluwaleke</p>
+      <p id="email">hashilekky@gmail.com</p>
+    </div>
+  </div>
 </div>
+
+<div class="profile-container" style="font-size: 14px">
+  <div class="" style="">
+    <div id="questions-count">You have asked 4 questions</div>
+    <br/>
+    <div style="height: 1px; background-color: slategrey; margin-bottom: 1%"></div>
+    <br/>
+    <div id="answers-count">You have 4 answers</div>
+  </div>
+</div>
+
+<div class="profile-container" style="font-size: 13px; ">
+  <h2>Your Popular Questions</h2>
+  <div style="height: 1px; background-color: slategrey; margin-bottom: 1%"></div>
+  <br/>
+  <div class="container" id="popular-questions-container">
+
+  </div>
+</div>
+
+
+<div class="profile-container" style="font-size: 13px;">
+  <h2>Your Recent Questions</h2>
+  <div style="height: 1px; background-color: slategrey; margin-bottom: 1%"></div>
+  <br/>
+  <div class="container" id="recent-questions-container">
+
+  </div>
+</div>
+
+
 </body>
 
 </html>
