@@ -2,7 +2,8 @@ const saveCookie = (name, value) => {
   const cook = `${name}=${value};path=/`
   document.cookie = cook;
 };
-const rootUrl = 'https://stack-overflow-lite-backend.herokuapp.com/api/v1';
+// const rootUrl = 'https://stack-overflow-lite-backend.herokuapp.com/api/v1';
+const rootUrl = 'http://localhost:3000/api/v1';
 
 
 const getCookie = (cname) => {
@@ -29,7 +30,6 @@ const getSavedUser = () => {
 const postData = (url, data, callback) => {
   return fetch(rootUrl + url, {
     method: 'POST', // *GET, POST, PUT, DELETE, etc.
-    mode: "cors", // no-cors, cors, *same-origin
     headers: {
       'Content-Type': 'application/json; charset=utf-8',
       'Accept': 'application/json',
@@ -51,7 +51,6 @@ const postData = (url, data, callback) => {
 const putData = (url, data, callback) => {
   return fetch(rootUrl + url, {
     method: 'PUT', // *GET, POST, PUT, DELETE, etc.
-    mode: "cors", // no-cors, cors, *same-origin
     headers: {
       'Content-Type': 'application/json; charset=utf-8',
       'Accept': 'application/json',
@@ -74,7 +73,6 @@ const putData = (url, data, callback) => {
 const getData = (url, callback) => {
   return fetch(rootUrl + url, {
     method: 'GET', // *GET, POST, PUT, DELETE, etc.
-    mode: "cors", // no-cors, cors, *same-origin
     headers: {
       'Accept': 'application/json',
       'x-access-token': getCookie('token')
