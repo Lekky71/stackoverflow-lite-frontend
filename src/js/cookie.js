@@ -2,7 +2,7 @@ const saveCookie = (name, value) => {
   const cook = `${name}=${value};path=/`
   document.cookie = cook;
 };
-const rootUrl = 'http://127.0.0.1:3000/api/v1';
+const rootUrl = 'https://stack-overflow-lite-backend.herokuapp.com/api/v1';
 
 
 const getCookie = (cname) => {
