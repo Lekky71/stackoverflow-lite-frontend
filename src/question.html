@@ -40,20 +40,11 @@
 
 <div style="margin-top: 5%; margin-bottom: 5%; background-color: white; padding-top: 1%; padding-bottom: 2%"
      id="question-container">
-  <h1 id="question-title">Frontend javascript frameworks with node.js</h1>
+  <h1 id="question-title"></h1>
   <div style="height: 1px; background-color: slategrey;"></div>
   <div class="main-part">
     <div class="question" style="margin-bottom: 1.5%">
       <p style="font-size: 15px" id="question-content">
-        I am starting to learn frontend JavaScript frameworks like Backbone.js or Embers.js and I wanted to do some
-        projects in Node.js. I have been reading some documentation and it seems these frameworks are used when you
-        create an application in a single page. I'm used to developing apps which are divided into several pages and I
-        wonder if those frameworks would be more a help or a burden to the project in my case.
-        <br/>
-        <br/>
-        I also wanted to know if as JavaScript is used both in the server and the client, as I use the same language if
-        there is any kind of feature I can use to share some code between them, and if any frontend framework is more
-        suitable for Node.js because of this.
       </p>
       <div class="tags" id="question-tag">
         Mobile Web
@@ -61,8 +52,8 @@
       <div class="col-12" style="display: flex; justify-content: flex-end; padding-right: 20px">
         <div class="tags"
              style="font-size: 13px; background-color: #3CB371; text-align: left; height: fit-content; padding: 8px; margin-right: 23px">
-          <div class=""><span id="question-date">Asked on dec 12, 2017</span></div>
-          <div id="question-asker">By Leke</div>
+          <div class=""><span id="question-date"></span></div>
+          <div id="question-asker"></div>
         </div>
       </div>
     </div>
@@ -78,7 +69,7 @@
         <h2>Add an answer</h2>
         <form id="add-answer-form">
         <textarea id="answer-textarea" title="answer" class="col-12"
-                  style="height: 120px; font-size: 14px; margin-bottom: 1%" minlength="15" required>
+                  style="height: 120px; font-size: 14px; margin-bottom: 1%" minlength="20" required>
         </textarea>
           <input id="answer-button" type="submit" value="Post your answer" style="color: white; text-align: center"/>
         </form>
@@ -98,7 +89,7 @@
     </div>
     <div class="modal-body">
       <form method="post" id="add-comment-form" style="display: flex; flex-flow: column; align-items: center">
-        <textarea title="comment" id="comment-textarea" name="content"style="width: 100%; height: 100px" required></textarea>
+        <textarea title="comment" id="comment-textarea" name="content"style="width: 100%; height: 100px" required minlength="10"></textarea>
         <br/>
         <input type="submit" value="Post comment" style="color: white"/>
         <br/>

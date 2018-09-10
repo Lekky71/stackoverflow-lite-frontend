@@ -59,9 +59,10 @@ window.addEventListener('load', (ev) => {
 
   const fetchQuestion = (questionId) => {
     getData(`/questions/${questionId}`, (err, res) => {
-      if(err) return;
+      if(!err) {
       if (res.status === 'success') {
         const question = res.question;
+        console.log(question);
         title.innerHTML = question.title;
         content.innerHTML = question.content;
         tag.innerHTML = question.category;
@@ -114,6 +115,7 @@ window.addEventListener('load', (ev) => {
           </div>
         </div>`;
         })
+      }
       }
     });
   };

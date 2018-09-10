@@ -13,12 +13,28 @@ window.addEventListener('load', (ev) => {
 
         const username = document.getElementById('username');
         const fullName = document.getElementById('fullname');
-        const email = document.getElementById('email');
+        const emailText = document.getElementById('email');
 
         const qstCount = document.getElementById('questions-count');
         const ansCount = document.getElementById('answers-count');
 
         username.innerHTML = user.username;
+        fullName.innerHTML = `${user.first_name} ${user.last_name}`;
+        emailText.innerHTML = user.email;
+
+        qstCount.innerHTML = `You have asked ${res.questions.length} questions`;
+
+        getData(`/questions/user/${user.user_id}`, (err1, res1) => {
+          if(!err1){
+            if(res.status === 'success'){
+              saveCookie('token', res1.token);
+              saveCookie('user', JSON.stringify(res1.user));
+              const eng = res1.user.answer_count <=1 ? 'answer' : 'answers';
+              ansCount.innerHTML = `You have ${res1.user.answer_count} ${eng}`;
+
+            }
+          }
+        });
 
         popQues = res.questions.sort((a, b) => b.answer_count - a.answer_count);
 
